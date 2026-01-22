@@ -1,17 +1,14 @@
 <?php
 session_start();
 
-/* If already logged in */
 if (isset($_SESSION['username'])) {
     header("Location: dashboard.php");
     exit;
 }
 
-/* Get cookie values */
 $savedUsername = $_COOKIE['remember_username'] ?? "";
 $theme = $_COOKIE['user_theme'] ?? "light";
 
-/* Get error */
 $error = $_SESSION['error'] ?? "";
 unset($_SESSION['error']);
 ?>
@@ -54,3 +51,4 @@ unset($_SESSION['error']);
 </div>
 </body>
 </html>
+
